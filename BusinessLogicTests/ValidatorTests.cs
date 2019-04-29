@@ -1,3 +1,4 @@
+using BusinessLogic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BusinessLogicTests
@@ -32,7 +33,7 @@ namespace BusinessLogicTests
         [DataRow(2000, 0, 50000)]
         public void IsWithinRange_NumInInclusiveRange_ReturnTrue(int test, int min, int max)
         {
-            Assert.Fail();
+            Assert.AreEqual(true, Validator.IsWithinRange(test, min, max));
         }
 
         [TestMethod]
@@ -41,7 +42,7 @@ namespace BusinessLogicTests
         [DataRow(10000, 0, 5000)]
         public void IsWithinRange_NumOutsideInclusiveRange_ReturnsFalse(int test, int min, int max)
         {
-            Assert.Fail();
+            Assert.AreEqual(false, Validator.IsWithinRange(test, min, max));
         }
     }
 }
