@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
@@ -11,7 +12,7 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsSsn(string ssn)
         {
-            throw new NotImplementedException();
+            return Regex.IsMatch(ssn, @"^(?:\d{9}|\d{3}-\d{2}-\d{4})$");
         }
 
         /// <summary>

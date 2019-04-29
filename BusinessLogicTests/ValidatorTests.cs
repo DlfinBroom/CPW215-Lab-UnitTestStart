@@ -13,7 +13,7 @@ namespace BusinessLogicTests
         [DataRow("428-52-1234")]
         public void IsValidSsn_ValidInput_ReturnTrue(string input)
         {
-            Assert.Fail();
+            Assert.AreEqual(true, Validator.IsSsn(input));
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace BusinessLogicTests
         [DataRow("TenLetters")]
         public void IsValidSsn_InvalidInput_ReturnsFalse(string input)
         {
-            Assert.Fail();
+            Assert.AreEqual(false, Validator.IsSsn(input));
         }
 
         [TestMethod]
